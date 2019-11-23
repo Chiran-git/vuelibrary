@@ -28,7 +28,22 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'library' => 'required|numeric',
+        ]);
+
+        $book = new Book;
+        $book->name = $request->name;
+        $book->description = $request->description;
+        $book->library_id = $request->library;
+        
+        if ($book->save()) {
+            return response()->json(new BookResource($book));
+        } else {
+            return response()->json([], 400);
+        }
     }
 
     /**

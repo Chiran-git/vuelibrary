@@ -9,7 +9,11 @@
                 </div>
             </div>
             <div class="col-md-3">
-                
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <router-link to="/books/add" class="nav-link active" href="#">Add Book</router-link>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
                 

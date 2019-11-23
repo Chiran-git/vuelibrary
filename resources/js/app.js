@@ -51,6 +51,10 @@ const routes = [
 		]
 	},
 	{
+		path: '/books/add',
+		component: require('./components/pages/AddBook').default,
+	},
+	{
 		path: '/books/:id',
 		component: require('./components/pages/Book').default,
 	},

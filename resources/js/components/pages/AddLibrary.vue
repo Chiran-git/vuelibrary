@@ -43,7 +43,7 @@
             createLibrary () {
                 axios.post(`${CP.baseApiUrl}/libraries`, this.library)
                     .then(response => {
-                        this.post= {};
+                        this.library= {};
                         this.$router.push('/libraries');
                     })
                     .catch(error => {
