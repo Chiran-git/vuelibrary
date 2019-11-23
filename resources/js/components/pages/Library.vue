@@ -6,7 +6,7 @@
                 <h4>Name</h4> {{ library.name }}
                 <h4>List of books </h4>
                 <ul>
-                    <li v-for="book in library.books">
+                    <li v-for="book in library.books" class="bg-primary">
                         <router-link :to="'/books/'+book.id">
                             {{ book.name }}
                         </router-link>
@@ -39,3 +39,24 @@
     }
 
 </script>
+
+<style scoped>
+    ul {
+        padding-left: 0;
+    }
+    ul>li{
+        list-style: none;
+        display: inline-block;
+        padding: 5px;
+        margin: 5px;
+    }
+    ul>li>a {
+        text-transform: uppercase;
+        padding: 5px;
+        color: #fff;
+        font-weight: 600;
+    }
+    ul>li>a:hover {
+        text-decoration: none;
+    }
+</style>

@@ -3,7 +3,7 @@
         <div class="card card-default">
             <div class="card-header">Book Info</div>
             <div class="card-body">
-                <h3>Name:</h3>{{ book.name }}
+                <h4>Name:</h4>{{ book.name }}
 
                 <h4>Description:</h4> 
                 <p>{{ book.description }}</p>
