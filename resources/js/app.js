@@ -66,3 +66,14 @@ const app = new Vue({
     el: '#app',
     router,
 });
+
+
+$(".btn-refresh").click(function() {
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost/commercepundit/public/refresh_captcha',
+        success: function(data) {
+            $(".captcha span").html(data.captcha);
+        }
+    })
+})

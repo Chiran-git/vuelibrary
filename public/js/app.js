@@ -1898,7 +1898,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("http://localhost/commercepundit/public/api/books/".concat(this.id)).then(function (response) {
-        console.log(response.data);
         _this.book = response.data;
       });
     }
@@ -1992,14 +1991,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getLibrary();
-    console.log('Library loaded');
   },
   methods: {
     getLibrary: function getLibrary() {
       var _this = this;
 
       axios.get("http://localhost/commercepundit/public/api/libraries/".concat(this.id)).then(function (response) {
-        console.log(response.data);
         _this.library = response.data;
       });
     }
@@ -76393,6 +76390,15 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
 var app = new Vue({
   el: '#app',
   router: router
+});
+$(".btn-refresh").click(function () {
+  $.ajax({
+    type: 'GET',
+    url: 'http://localhost/commercepundit/public/refresh_captcha',
+    success: function success(data) {
+      $(".captcha span").html(data.captcha);
+    }
+  });
 });
 
 /***/ }),

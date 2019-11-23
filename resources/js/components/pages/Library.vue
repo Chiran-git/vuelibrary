@@ -27,13 +27,11 @@
         },
         mounted () {
             this.getLibrary();
-            console.log('Library loaded');
         },
         methods: {
             getLibrary () {
                 axios.get(`http://localhost/commercepundit/public/api/libraries/${this.id}`)
                     .then(response => {
-                        console.log(response.data);
                         this.library = response.data;
                     });
             }
