@@ -4,7 +4,8 @@
             <div class="col-md-3">
                 <div class="card bg-info">
                     <div class="card-body">
-                        <router-link to="/libraries" class="nav-link active" href="#">Click here to View Libraries</router-link>
+                        <router-link to="/libraries" class="nav-link active" href="#">Click here to View Libraries
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -16,10 +17,10 @@
                 </div>
             </div>
             <div class="col-md-3">
-                
+
             </div>
             <div class="col-md-3">
-                
+
             </div>
         </div>
 

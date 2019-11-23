@@ -19,7 +19,8 @@
                             <div class="form-group">
                                 <label>Book Description:</label>
                                 <input type="text" class="form-control" v-model="book.description">
-                                <span v-if="errors && errors.description" class="text-danger">{{ errors.description[0] }}</span>
+                                <span v-if="errors && errors.description"
+                                    class="text-danger">{{ errors.description[0] }}</span>
                             </div>
                         </div>
                     </div>
@@ -30,8 +31,7 @@
                                 <label>Library:</label>
                                 <select v-model="book.library" class="form-control">
                                     <option disabled value="">Select a library</option>
-                                    <option v-for="library in libraries" 
-                                        v-bind:value="library.id">{{ library.name }}
+                                    <option v-for="library in libraries" v-bind:value="library.id">{{ library.name }}
                                     </option>
                                 </select>
                                 <span v-if="errors && errors.library" class="text-danger">{{ errors.library[0] }}</span>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
 
-                    <br/>
+                    <br />
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </form>
             </div>
         </div>
@@ -58,7 +58,7 @@
     export default {
         data() {
             return {
-                book:{
+                book: {
                     name: '',
                     description: '',
                     library: ''
@@ -67,27 +67,27 @@
                 errors: {},
             }
         },
-        mounted () {
+        mounted() {
             this.getLibraries()
         },
         methods: {
-            getLibraries () {
+            getLibraries() {
                 axios.get(`${CP.baseApiUrl}/libraries`)
                     .then(response => {
                         this.libraries = response.data.data;
                     });
             },
 
-            addBook () {
+            addBook() {
                 axios.post(`${CP.baseApiUrl}/books`, this.book)
                     .then(response => {
-                        this.book= {};
+                        this.book = {};
                         this.$router.push('/libraries');
                         this.$toastr.s("SUCCESS", "Book successfully added");
                     })
                     .catch(error => {
                         if (error.response.status === 422) {
-                          this.errors = error.response.data.errors || {};
+                            this.errors = error.response.data.errors || {};
                         }
                         this.$toastr.e("Something went wrong");
                     });

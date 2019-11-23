@@ -20,48 +20,53 @@
 </template>
 
 <script>
-export default {
-    data: function() {
-        return  {
-            libraries: {},
-        }
-    },
-    mounted() {
-        this.getLibraries()
-    },
+    export default {
+        data: function () {
+            return {
+                libraries: {},
+            }
+        },
+        mounted() {
+            this.getLibraries()
+        },
 
-    methods: {
-        getLibraries () {
-            axios.get(`${CP.baseApiUrl}/libraries`)
-                .then(response => {
-                    this.libraries = response.data.data;
-                });
+        methods: {
+            getLibraries() {
+                axios.get(`${CP.baseApiUrl}/libraries`)
+                    .then(response => {
+                        this.libraries = response.data.data;
+                    });
+            }
         }
     }
-}
+
 </script>
 
 <style scoped>
     ul {
         padding-left: 0;
     }
-    ul>li{
+
+    ul>li {
         list-style: none;
         display: inline-block;
         padding: 5px;
         margin: 5px;
     }
+
     ul>li>a {
         text-transform: uppercase;
         padding: 5px;
         color: #fff;
         font-weight: 600;
     }
+
     ul>li>a:hover {
         text-decoration: none;
     }
 
-    .btn a{
+    .btn a {
         color: #fff;
     }
+
 </style>

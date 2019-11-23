@@ -1870,6 +1870,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {//
@@ -2165,6 +2166,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -29175,7 +29177,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nul[data-v-a9aac016] {\n    padding-left: 0;\n}\nul>li[data-v-a9aac016]{\n    list-style: none;\n    display: inline-block;\n    padding: 5px;\n    margin: 5px;\n}\nul>li>a[data-v-a9aac016] {\n    text-transform: uppercase;\n    padding: 5px;\n    color: #fff;\n    font-weight: 600;\n}\nul>li>a[data-v-a9aac016]:hover {\n    text-decoration: none;\n}\n.btn a[data-v-a9aac016]{\n    color: #fff;\n}\n", ""]);
+exports.push([module.i, "\nul[data-v-a9aac016] {\n    padding-left: 0;\n}\nul>li[data-v-a9aac016] {\n    list-style: none;\n    display: inline-block;\n    padding: 5px;\n    margin: 5px;\n}\nul>li>a[data-v-a9aac016] {\n    text-transform: uppercase;\n    padding: 5px;\n    color: #fff;\n    font-weight: 600;\n}\nul>li>a[data-v-a9aac016]:hover {\n    text-decoration: none;\n}\n.btn a[data-v-a9aac016] {\n    color: #fff;\n}\n\n", ""]);
 
 // exports
 
@@ -29194,7 +29196,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nul[data-v-4c5ecdd6] {\n    padding-left: 0;\n}\nul>li[data-v-4c5ecdd6]{\n    list-style: none;\n    display: inline-block;\n    padding: 5px;\n    margin: 5px;\n}\nul>li>a[data-v-4c5ecdd6] {\n    padding: 5px;\n    color: #fff;\n    font-weight: 600;\n}\nul>li>a[data-v-4c5ecdd6]:hover {\n    text-decoration: none;\n}\n", ""]);
+exports.push([module.i, "\nul[data-v-4c5ecdd6] {\n    padding-left: 0;\n}\nul>li[data-v-4c5ecdd6] {\n    list-style: none;\n    display: inline-block;\n    padding: 5px;\n    margin: 5px;\n}\nul>li>a[data-v-4c5ecdd6] {\n    padding: 5px;\n    color: #fff;\n    font-weight: 600;\n}\nul>li>a[data-v-4c5ecdd6]:hover {\n    text-decoration: none;\n}\n\n", ""]);
 
 // exports
 
@@ -61406,7 +61408,7 @@ var render = function() {
                   staticClass: "nav-link active",
                   attrs: { to: "/libraries", href: "#" }
                 },
-                [_vm._v("Click here to View Libraries")]
+                [_vm._v("Click here to View Libraries\n                    ")]
               )
             ],
             1
@@ -61907,30 +61909,32 @@ var render = function() {
       _c("div", { staticClass: "card-header" }, [_vm._v("Library")]),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
-        _c("h4", [_vm._v("Name")]),
-        _vm._v(" " + _vm._s(_vm.library.name) + "\n            "),
+        _c("h4", [_vm._v("Name of the library: " + _vm._s(_vm.library.name))]),
+        _vm._v(" "),
         _c("h4", [_vm._v("List of books ")]),
         _vm._v(" "),
-        _c(
-          "ul",
-          _vm._l(_vm.library.books, function(book) {
-            return _c(
-              "li",
-              { staticClass: "bg-primary" },
-              [
-                _c("router-link", { attrs: { to: "/books/" + book.id } }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(book.name) +
-                      "\n                    "
-                  )
-                ])
-              ],
-              1
+        _vm.library.books.length > 0
+          ? _c(
+              "ul",
+              _vm._l(_vm.library.books, function(book) {
+                return _c(
+                  "li",
+                  { staticClass: "bg-primary" },
+                  [
+                    _c("router-link", { attrs: { to: "/books/" + book.id } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(book.name) +
+                          "\n                    "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              }),
+              0
             )
-          }),
-          0
-        )
+          : _c("p", [_vm._v("No books available")])
       ])
     ])
   ])

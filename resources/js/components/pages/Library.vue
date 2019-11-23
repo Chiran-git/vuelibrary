@@ -3,15 +3,16 @@
         <div class="card card-default">
             <div class="card-header">Library</div>
             <div class="card-body">
-                <h4>Name</h4> {{ library.name }}
+                <h4>Name of the library: {{ library.name }}</h4> 
                 <h4>List of books </h4>
-                <ul>
+                <ul v-if="library.books.length > 0">
                     <li v-for="book in library.books" class="bg-primary">
                         <router-link :to="'/books/'+book.id">
                             {{ book.name }}
                         </router-link>
                     </li>
                 </ul>
+                <p v-else>No books available</p>
 
             </div>
         </div>
@@ -25,11 +26,11 @@
                 library: {},
             }
         },
-        mounted () {
+        mounted() {
             this.getLibrary();
         },
         methods: {
-            getLibrary () {
+            getLibrary() {
                 axios.get(`${CP.baseApiUrl}/libraries/${this.id}`)
                     .then(response => {
                         this.library = response.data;
@@ -44,18 +45,22 @@
     ul {
         padding-left: 0;
     }
-    ul>li{
+
+    ul>li {
         list-style: none;
         display: inline-block;
         padding: 5px;
         margin: 5px;
     }
+
     ul>li>a {
         padding: 5px;
         color: #fff;
         font-weight: 600;
     }
+
     ul>li>a:hover {
         text-decoration: none;
     }
+
 </style>

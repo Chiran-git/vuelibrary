@@ -13,7 +13,7 @@
                             </div>
                         </div>
                     </div>
-                    <br/>
+                    <br />
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -22,7 +22,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </form>
             </div>
         </div>
@@ -32,24 +32,24 @@
     export default {
         data() {
             return {
-                library:{},
+                library: {},
                 errors: {},
             }
         },
-        mounted () {
+        mounted() {
 
         },
         methods: {
-            createLibrary () {
+            createLibrary() {
                 axios.post(`${CP.baseApiUrl}/libraries`, this.library)
                     .then(response => {
-                        this.library= {};
+                        this.library = {};
                         this.$router.push('/libraries');
                         this.$toastr.s("SUCCESS", "Library created");
                     })
                     .catch(error => {
                         if (error.response.status === 422) {
-                          this.errors = error.response.data.errors || {};
+                            this.errors = error.response.data.errors || {};
                         }
                         this.$toastr.e("Something went wrong");
                     });

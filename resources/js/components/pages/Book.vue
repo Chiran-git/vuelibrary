@@ -5,7 +5,7 @@
             <div class="card-body">
                 <h4>Name:</h4>{{ book.name }}
 
-                <h4>Description:</h4> 
+                <h4>Description:</h4>
                 <p>{{ book.description }}</p>
             </div>
         </div>
@@ -19,11 +19,11 @@
                 book: {},
             }
         },
-        mounted () {
+        mounted() {
             this.getBook();
         },
         methods: {
-           getBook () {
+            getBook() {
                 axios.get(`${CP.baseApiUrl}/books/${this.id}`)
                     .then(response => {
                         this.book = response.data;

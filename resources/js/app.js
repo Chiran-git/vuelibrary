@@ -38,33 +38,31 @@ Vue.use(VueToastr, {
 
 Vue.component('index', require('./components/Index.vue').default);
 
-const routes = [
-	{
-		path: '/libraries',
-		component: require('./components/pages/EmptyLibraryView').default,
-		children: [
-			{
-				path: "",
-				component: require('./components/pages/Home').default,
-			},
-			{
-				path: "add",
-				component: require('./components/pages/AddLibrary').default,
-			},
-			{ 
-				path: ':id', 
-				component: require('./components/pages/Library').default,
-			},
-		]
-	},
-	{
-		path: '/books/add',
-		component: require('./components/pages/AddBook').default,
-	},
-	{
-		path: '/books/:id',
-		component: require('./components/pages/Book').default,
-	},
+const routes = [{
+        path: '/libraries',
+        component: require('./components/pages/EmptyLibraryView').default,
+        children: [{
+                path: "",
+                component: require('./components/pages/Home').default,
+            },
+            {
+                path: "add",
+                component: require('./components/pages/AddLibrary').default,
+            },
+            {
+                path: ':id',
+                component: require('./components/pages/Library').default,
+            },
+        ]
+    },
+    {
+        path: '/books/add',
+        component: require('./components/pages/AddBook').default,
+    },
+    {
+        path: '/books/:id',
+        component: require('./components/pages/Book').default,
+    },
 ];
 
 /**
@@ -74,7 +72,7 @@ const routes = [
  */
 
 const router = new VueRouter({
-	routes
+    routes
 });
 
 const app = new Vue({
@@ -83,11 +81,11 @@ const app = new Vue({
 });
 
 
-$(".btn-refresh").click(function() {
+$(".btn-refresh").click(function () {
     $.ajax({
         type: 'GET',
         url: `${CP.baseUrl}/refresh_captcha`,
-        success: function(data) {
+        success: function (data) {
             $(".captcha span").html(data.captcha);
         }
     })
