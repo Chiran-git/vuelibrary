@@ -17,6 +17,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 Vue.use(BootstrapVue);
 
+// VueToastr
+import VueToastr from "vue-toastr";
+
+Vue.use(VueToastr, {
+    defaultTimeout: 5000,
+    defaultClassNames: ["animated", "zoomInUp"]
+});
 
 /**
  * The following block of code may be used to automatically register your

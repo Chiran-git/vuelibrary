@@ -83,11 +83,13 @@
                     .then(response => {
                         this.book= {};
                         this.$router.push('/libraries');
+                        this.$toastr.s("SUCCESS", "Book successfully added");
                     })
                     .catch(error => {
                         if (error.response.status === 422) {
                           this.errors = error.response.data.errors || {};
                         }
+                        this.$toastr.e("Something went wrong");
                     });
             }
         }

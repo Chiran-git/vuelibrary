@@ -43,6 +43,6 @@ php artisan db:seed
 
 ## Login 
 
-Admin User
-username: admin@gmail.com
-password: admin
+Admin User<br/>
+username: admin@gmail.com <br/>
+password: admin <br/>
