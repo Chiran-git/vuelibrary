@@ -28,7 +28,7 @@ export default {
 
     methods: {
         getLibraries () {
-            axios.get(`http://localhost/commercepundit/public/api/libraries`)
+            axios.get(`${CP.baseApiUrl}/libraries`)
                 .then(response => {
                     this.libraries = response.data.data;
                 });

@@ -30,7 +30,7 @@
         },
         methods: {
             getLibrary () {
-                axios.get(`http://localhost/commercepundit/public/api/libraries/${this.id}`)
+                axios.get(`${CP.baseApiUrl}/libraries/${this.id}`)
                     .then(response => {
                         this.library = response.data;
                     });

@@ -71,7 +71,7 @@ const app = new Vue({
 $(".btn-refresh").click(function() {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost/commercepundit/public/refresh_captcha',
+        url: `${CP.baseUrl}/refresh_captcha`,
         success: function(data) {
             $(".captcha span").html(data.captcha);
         }

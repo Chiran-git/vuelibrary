@@ -1897,7 +1897,7 @@ __webpack_require__.r(__webpack_exports__);
     getBook: function getBook() {
       var _this = this;
 
-      axios.get("http://localhost/commercepundit/public/api/books/".concat(this.id)).then(function (response) {
+      axios.get("".concat(CP.baseApiUrl, "/books/").concat(this.id)).then(function (response) {
         _this.book = response.data;
       });
     }
@@ -1945,7 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
     getLibraries: function getLibraries() {
       var _this = this;
 
-      axios.get("http://localhost/commercepundit/public/api/libraries").then(function (response) {
+      axios.get("".concat(CP.baseApiUrl, "/libraries")).then(function (response) {
         _this.libraries = response.data.data;
       });
     }
@@ -1996,7 +1996,7 @@ __webpack_require__.r(__webpack_exports__);
     getLibrary: function getLibrary() {
       var _this = this;
 
-      axios.get("http://localhost/commercepundit/public/api/libraries/".concat(this.id)).then(function (response) {
+      axios.get("".concat(CP.baseApiUrl, "/libraries/").concat(this.id)).then(function (response) {
         _this.library = response.data;
       });
     }
@@ -76394,7 +76394,7 @@ var app = new Vue({
 $(".btn-refresh").click(function () {
   $.ajax({
     type: 'GET',
-    url: 'http://localhost/commercepundit/public/refresh_captcha',
+    url: "".concat(CP.baseUrl, "/refresh_captcha"),
     success: function success(data) {
       $(".captcha span").html(data.captcha);
     }

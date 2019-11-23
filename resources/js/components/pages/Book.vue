@@ -24,7 +24,7 @@
         },
         methods: {
            getBook () {
-                axios.get(`http://localhost/commercepundit/public/api/books/${this.id}`)
+                axios.get(`${CP.baseApiUrl}/books/${this.id}`)
                     .then(response => {
                         this.book = response.data;
                     });
