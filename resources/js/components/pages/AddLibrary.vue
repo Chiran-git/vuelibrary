@@ -45,11 +45,13 @@
                     .then(response => {
                         this.library= {};
                         this.$router.push('/libraries');
+                        this.$toastr.s("SUCCESS", "Library created");
                     })
                     .catch(error => {
                         if (error.response.status === 422) {
                           this.errors = error.response.data.errors || {};
                         }
+                        this.$toastr.e("Something went wrong");
                     });
             }
         }

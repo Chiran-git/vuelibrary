@@ -2044,10 +2044,14 @@ __webpack_require__.r(__webpack_exports__);
         _this.library = {};
 
         _this.$router.push('/libraries');
+
+        _this.$toastr.s("SUCCESS", "Library created");
       })["catch"](function (error) {
         if (error.response.status === 422) {
           _this.errors = error.response.data.errors || {};
         }
+
+        _this.$toastr.e("Something went wrong");
       });
     }
   }
