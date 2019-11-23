@@ -51,7 +51,6 @@
         margin: 5px;
     }
     ul>li>a {
-        text-transform: uppercase;
         padding: 5px;
         color: #fff;
         font-weight: 600;

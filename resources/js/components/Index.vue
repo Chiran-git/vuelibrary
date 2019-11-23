@@ -1,10 +1,24 @@
 <template>
     <div id="main">
-        <div class="card bg-info">
-            <div class="card-body">
-                <router-link to="/libraries" class="nav-link active" href="#">Click here to View Libraries</router-link>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <router-link to="/libraries" class="nav-link active" href="#">Click here to View Libraries</router-link>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                
+            </div>
+            <div class="col-md-3">
+                
+            </div>
+            <div class="col-md-3">
+                
             </div>
         </div>
+
         <br /><br />
         <div id="content">
             <router-view></router-view>

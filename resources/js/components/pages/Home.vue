@@ -1,7 +1,11 @@
 <template>
     <div class="container">
         <div class="card card-default">
-            <div class="card-header">Libraries</div>
+            <div class="card-header">Libraries
+                <button class="btn btn-primary btn-xs float-right">
+                    <router-link to="libraries/add" class="nav-link active" href="#">Create Library</router-link>
+                </button>
+            </div>
             <div class="card-body">
                 <ul>
                     <li v-for="library in libraries" class="bg-success">
@@ -55,5 +59,9 @@ export default {
     }
     ul>li>a:hover {
         text-decoration: none;
+    }
+
+    .btn a{
+        color: #fff;
     }
 </style>

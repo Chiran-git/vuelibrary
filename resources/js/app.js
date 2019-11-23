@@ -40,6 +40,10 @@ const routes = [
 				path: "",
 				component: require('./components/pages/Home').default,
 			},
+			{
+				path: "add",
+				component: require('./components/pages/AddLibrary').default,
+			},
 			{ 
 				path: ':id', 
 				component: require('./components/pages/Library').default,

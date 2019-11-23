@@ -24,16 +24,6 @@ class LibraryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -41,7 +31,19 @@ class LibraryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|string',
+        ]);
+
+        $library = new Library;
+        $library->name = $request->name;
+        
+        if ($library->save()) {
+            return response()->json(new LibraryResource($library));
+        } else {
+            return response()->json([], 400);
+        }
+
     }
 
     /**
