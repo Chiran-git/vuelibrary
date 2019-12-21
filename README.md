@@ -14,7 +14,7 @@ A Library Crud created in Laravel and Vue
 ## Installation steps
 
 ```
-git clone https://github.com/Chiran-git/commercepundit.git
+git clone https://github.com/Chiran-git/vuelibrary.git
 ```
 
 ```
